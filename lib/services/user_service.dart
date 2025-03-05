@@ -13,7 +13,7 @@ class UserService {
     if (user == null) {
       final defaultUser = User(
         id: 'current_user',
-        username: '当前用户',
+        username: 'Tom',
         email: 'user@example.com',
         avatarUrl: 'assets/images/user_avatar.png',
         bio: '热爱科技和AI的普通用户',

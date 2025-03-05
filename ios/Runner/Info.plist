@@ -43,8 +43,20 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Synai needs access to your camera to take photos for updating your cover photo. Without this access, you will not be able to update your cover photo using the camera.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Synai uses your location data continuously to display users near you, enhancing your social interactions and recommendations. If you deny this permission, nearby users will not be shown.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Synai requires access to your location to show you nearby users for a more personalized social experience. If you choose not to allow this, nearby users will not be displayed.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Synai needs microphone access to record and send audio messages. Without this permission, you won&apos;t be able to record and share audio messages.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Synai requires access to add new photos to your library, enabling you to save photos directly from the app.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to the photo library to set your profile picture.</string>
+	<string>Synai needs access to your photo library to select and update your cover photo. Without this permission, you won&apos;t be able to update your cover photo.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Synai uses device identifier information to enhance the security of your account transactions and provide personalized advertising services tailored to your preferences.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
