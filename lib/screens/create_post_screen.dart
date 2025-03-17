@@ -44,41 +44,43 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
               title: const Text('Select Tags'),
               content: SizedBox(
                 width: double.maxFinite,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Text('Select up to 5 tags'),
-                    const SizedBox(height: 16),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: availableTags.map((tag) {
-                        final isSelected = _selectedTags.contains(tag);
-                        return FilterChip(
-                          label: Text(tag),
-                          selected: isSelected,
-                          onSelected: (selected) {
-                            if (selected && _selectedTags.length >= 5) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('You can select up to 5 tags')),
-                              );
-                              return;
-                            }
-                            setState(() {
-                              if (selected) {
-                                _selectedTags.add(tag);
-                              } else {
-                                _selectedTags.remove(tag);
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text('Select up to 5 tags'),
+                      const SizedBox(height: 16),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: availableTags.map((tag) {
+                          final isSelected = _selectedTags.contains(tag);
+                          return FilterChip(
+                            label: Text(tag),
+                            selected: isSelected,
+                            onSelected: (selected) {
+                              if (selected && _selectedTags.length >= 5) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('You can select up to 5 tags')),
+                                );
+                                return;
                               }
-                            });
-                            this.setState(() {});
-                          },
-                          selectedColor: AppTheme.primaryColor.withOpacity(0.2),
-                          checkmarkColor: AppTheme.primaryColor,
-                        );
-                      }).toList(),
-                    ),
-                  ],
+                              setState(() {
+                                if (selected) {
+                                  _selectedTags.add(tag);
+                                } else {
+                                  _selectedTags.remove(tag);
+                                }
+                              });
+                              this.setState(() {});
+                            },
+                            selectedColor: AppTheme.primaryColor.withOpacity(0.2),
+                            checkmarkColor: AppTheme.primaryColor,
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               actions: [
